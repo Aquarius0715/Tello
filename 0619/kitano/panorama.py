@@ -62,10 +62,7 @@ def create_panorama_from_dir(height_label):
 
 def main():
     heights = {
-        "2m": 200,
-        "3m": 100,
-        "4m": 100,
-        "5m": 100,
+        "2m": 200
     }
 
     send_command("command")

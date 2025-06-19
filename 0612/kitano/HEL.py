@@ -28,9 +28,11 @@ def draw_h():
     send_command("back 60")
     send_command("forward 30")
     send_command("cw 90")
-    send_command("forward 40")  # 中央の横棒
+    send_command("forward 40")  # 横棒
+    send_command("back 20")     # 真ん中に戻す
     send_command("ccw 90")
     send_command("forward 30")
+    # 向きを初期（北）に戻す必要なし（そのまま）
 
 def draw_e():
     print("[DRAW] E")
@@ -47,17 +49,23 @@ def draw_e():
     send_command("forward 30")
     send_command("cw 90")
     send_command("forward 40")  # 下横棒
-    send_command("ccw 90")
+    send_command("back 40")
+    send_command("ccw 90")      # 向きを戻す（初期状態）
 
 def draw_l():
     print("[DRAW] L")
     send_command("back 60")
+    send_command("forward 60")  # 下縦棒（向きそのまま）
     send_command("cw 90")
     send_command("forward 40")  # 横棒
-    send_command("ccw 90")
+    send_command("back 40")
+    send_command("ccw 90")      # 向きを戻す（初期状態）
 
 def move_to_next_letter():
-    send_command("right 80")
+    # 横に移動して向きを戻す
+    send_command("cw 90")       # 右向き
+    send_command("forward 80")
+    send_command("ccw 90")      # 前向き（北）へ戻す
 
 def main():
     print("Tello: HEL飛行開始")
