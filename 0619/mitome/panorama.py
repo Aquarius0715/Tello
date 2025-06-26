@@ -11,7 +11,7 @@ battery = tello.get_battery()
 print(f"バッテリー残量: {battery}%")
 
 tello.takeoff()
-tello.move_up(200) # 例として2m（200cm）上昇
+tello.move_up(500) # Nm (N00cm) 上昇
 time.sleep(5)
 
 tello.streamon() # ビデオストリーム開始
